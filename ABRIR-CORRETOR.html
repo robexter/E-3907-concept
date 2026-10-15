@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Corretor E-3907 — Responsividade V6</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#06121d;color:#e5effa}
+*{box-sizing:border-box}body{margin:0;padding:20px;min-height:100vh;background:radial-gradient(circle at top left,#12354d,#071520 48%,#040b13)}
+main{max-width:740px;margin:14px auto 60px}header{border:1px solid #2b4c63;border-radius:22px;padding:22px;background:#0c2334}
+small{color:#85c7ff;font-size:11px;font-weight:800;letter-spacing:.1em}h1{font-size:clamp(23px,5vw,34px);margin:8px 0}p{color:#bdd0e2;line-height:1.5}
+section{border:1px solid #2a4257;border-radius:18px;background:#0b1e2d;padding:18px;margin-top:14px}
+button,label.file{display:inline-flex;gap:8px;align-items:center;justify-content:center;border:1px solid #5e9dc1;background:#194667;color:#fff;border-radius:12px;min-height:46px;padding:12px 16px;font-weight:800;cursor:pointer;text-align:center;font-size:14px}
+button:hover,label.file:hover{filter:brightness(1.1)}button:disabled{opacity:.4;cursor:not-allowed}.secondary{background:#122c3d;border-color:#3f667c}
+input[type=file]{display:none} .actions{display:flex;flex-wrap:wrap;gap:10px}ul,ol{line-height:1.75;color:#c0d2df;padding-left:21px}code{font-size:12px;color:#e5c792;overflow-wrap:anywhere}
+#status{background:#0a1720;border-radius:12px;border:1px solid #294a60;padding:12px;min-height:60px;white-space:pre-line;color:#d7e7f4;margin-top:14px}
+a{color:#8ad4ff} .note{color:#a9c2d6;font-size:13px} @media(max-width:450px){body{padding:12px}section,header{padding:15px}.actions>*{width:100%}}
+</style></head><body><main>
+<header><small>ÁREA FRIA CONCEPT · CORREÇÃO RESPONSIVA V6</small>
+<h1>E-3907 — Botões no celular</h1>
+<p>Transforma PVR, Intemperismo, Flooding e Resumo em uma grade compacta após a tela de processo. Os botões de Conteúdo Integral e Laboratório também deixam de cobrir a imagem. Os dados técnicos e as lâmpadas permanecem intactos.</p></header>
+<section><h2>1 · Preparar o arquivo atualizado</h2>
+<p>Use a versão <strong>mais recente do GitHub</strong> para preservar todas as suas alterações.</p>
+<div class="actions"><button id="get">Buscar no GitHub e gerar index.html</button><label class="file secondary" for="file">Usar index.html do meu computador</label><input type="file" id="file" accept=".html,text/html"></div>
+<div id="status" role="status" aria-live="polite">Nenhum arquivo processado ainda.</div></section>
+<section><h2>2 · Publicar no GitHub</h2><ol>
+<li>Abra o <a href="https://github.com/robexter/E-3907-concept" target="_blank" rel="noopener">repositório E-3907-concept</a>.</li>
+<li>Escolha <strong>Add file → Upload files</strong> e envie somente o <code>index.html</code> que foi gerado.</li>
+<li>Faça <strong>Commit changes</strong> e abra <a href="https://robexter.github.io/E-3907-concept/" target="_blank" rel="noopener">a página E-3907</a>.</li>
+</ol><p class="note">Não precisa alterar o <code>sw.js</code> nem enviar nada ao repositório central da Área Fria. Se a tela antiga persistir, feche e reabra o PWA ou recarregue o site ignorando o cache.</p></section>
+</main><script>
+const OLD="\u003cdiv class=\"bottom\"\u003e\n  \u003cbutton class=\"ui\" id=\"pvrBtn\"\u003ePVR\u003c/button\u003e\n  \u003cbutton class=\"ui\" id=\"intBtn\"\u003eIntemperismo\u003c/button\u003e\n  \u003cbutton class=\"ui\" id=\"floodBtn\"\u003eFlooding\u003c/button\u003e\n  \u003cbutton class=\"ui\" id=\"summaryBtn\"\u003eResumo E-3907\u003c/button\u003e\n\u003c/div\u003e";
+const NEW="\u003cnav class=\"bottom e3907-study-shortcuts\" aria-label=\"Conceitos e resumo da E-3907\"\u003e\n  \u003cbutton class=\"ui\" id=\"pvrBtn\" type=\"button\"\u003ePVR\u003c/button\u003e\n  \u003cbutton class=\"ui\" id=\"intBtn\" type=\"button\"\u003eIntemperismo\u003c/button\u003e\n  \u003cbutton class=\"ui\" id=\"floodBtn\" type=\"button\"\u003eFlooding\u003c/button\u003e\n  \u003cbutton class=\"ui\" id=\"summaryBtn\" type=\"button\"\u003eResumo E-3907\u003c/button\u003e\n\u003c/nav\u003e\n\u003cdiv class=\"e3907-v5-dock\" id=\"e3907-v5-dock\" aria-label=\"Conteúdo integral e laboratório\"\u003e\u003c/div\u003e";
+const ADD="\u003c!-- E3907 RESPONSIVO V6 — sem deslocar/desativar lâmpadas --\u003e\n\u003cstyle id=\"e3907-responsive-controls-v6\"\u003e\n/* Quatro atalhos: fluxo normal após o diagrama, nunca sobreposto à área clicável. */\n.e3907-study-shortcuts.bottom {\n  position:relative!important;inset:auto!important;left:auto!important;right:auto!important;\n  top:auto!important;bottom:auto!important;transform:none!important;\n  z-index:auto!important;box-sizing:border-box;\n  display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));\n  gap:10px;width:calc(100% - 28px);max-width:1252px;margin:14px auto 8px;\n  padding:9px;background:#0b1925;border:1px solid #2b455d;border-radius:17px;\n  box-shadow:none;backdrop-filter:none;justify-content:stretch;\n}\n.e3907-study-shortcuts.bottom\u003e.ui {\n  display:flex;align-items:center;justify-content:center;\n  width:100%;min-width:0;min-height:45px;\n  padding:11px 8px;font-size:clamp(12px,1.5vw,15px);\n  line-height:1.2;white-space:normal;text-align:center;\n  overflow-wrap:anywhere;border-radius:12px;\n}\n.e3907-v5-dock {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));\n  gap:10px;width:calc(100% - 28px);max-width:1252px;margin:8px auto 20px;}\n.e3907-v5-dock:empty{display:none}\n.e3907-v5-dock\u003e#ci-open,.e3907-v5-dock\u003e#lc5-open{\n  position:relative!important;top:auto!important;bottom:auto!important;\n  left:auto!important;right:auto!important;inset:auto!important;\n  transform:none!important;z-index:2!important;min-width:0!important;\n  width:100%!important;max-width:100%!important;min-height:46px!important;\n  box-sizing:border-box!important;margin:0!important;padding:10px 8px!important;\n  display:flex!important;align-items:center!important;justify-content:center!important;\n  text-align:center!important;white-space:normal!important;overflow-wrap:anywhere!important;\n  font-size:clamp(11px,3.4vw,15px)!important;line-height:1.2!important;\n  border-radius:13px!important;box-shadow:none!important;\n}\n@media(max-width:640px){\n  .e3907-study-shortcuts.bottom{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:8px;margin-top:12px}\n  .e3907-study-shortcuts.bottom\u003e.ui{min-height:44px;font-size:clamp(12px,3.5vw,14px);padding:10px 7px}\n  .e3907-v5-dock{gap:8px}\n}\n@media(max-width:360px){\n  .e3907-study-shortcuts.bottom{width:calc(100% - 16px);padding:6px;gap:7px}\n  .e3907-v5-dock{width:calc(100% - 16px);gap:7px}\n  .e3907-study-shortcuts.bottom\u003e.ui{font-size:12px;min-height:43px;padding:9px 5px}\n  .e3907-v5-dock\u003e#ci-open,.e3907-v5-dock\u003e#lc5-open{font-size:11px!important;padding:9px 5px!important}\n}\n\u003c/style\u003e\n\u003cscript id=\"e3907-dock-v5-controls\"\u003e\n(()=\u003e{\n  const dock=document.getElementById('e3907-v5-dock');\n  if(!dock)return;\n  const place=()=\u003e{\n    for(const id of ['ci-open','lc5-open']){\n      const btn=document.getElementById(id);\n      if(btn\u0026\u0026btn.parentNode!==dock)dock.appendChild(btn);\n    }\n    if(dock.querySelector('#ci-open')\u0026\u0026dock.querySelector('#lc5-open')) observer.disconnect();\n  };\n  const observer=new MutationObserver(place);\n  observer.observe(document.body,{childList:true,subtree:true});\n  place();\n})();\n\u003c/script\u003e\n\u003c!-- FIM E3907 RESPONSIVO V6 --\u003e";
+function patch(source){
+  if(source.includes('e3907-responsive-controls-v6'))throw Error('A correção V6 já existe neste arquivo. Não há necessidade de aplicá-la novamente.');
+  if(source.split(OLD).length!==2)throw Error('O bloco dos quatro botões difere do esperado. Nenhuma alteração foi feita; não publique um arquivo incompatível.');
+  const anchor='\n</div>\n\n<aside class="panel"';
+  if(source.split(anchor).length!==2)throw Error('Não foi possível identificar de forma segura o fim do desenho. Nenhuma alteração foi feita.');
+  if(source.split('</body>').length!==2)throw Error('Fechamento do HTML inesperado.');
+  let html=source.replace(OLD,'');
+  html=html.replace(anchor,'\n</div>\n\n'+NEW+'\n\n<aside class="panel"');
+  html=html.replace('</body>',ADD+'\n</body>');
+  for(const id of ['pvrBtn','intBtn','floodBtn','summaryBtn']){
+    if(html.split('id="'+id+'"').length!==2)throw Error('Validação de integridade falhou no botão '+id);
+  }
+  if(html.indexOf('id="pvrBtn"')<html.indexOf('class="stage-shell"'))throw Error('Os botões não foram colocados após o desenho.');
+  return html;
+}
+function download(s){const blob=new Blob([s],{type:'text/html;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='index.html';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1200)}
+const status=document.getElementById('status');
+function setStatus(s){status.textContent=s;}
+function process(s,origin){const html=patch(s);download(html);setStatus('✓ index.html corrigido gerado a partir de '+origin+'\n✓ Preservados os textos técnicos, as lâmpadas e os scripts da versão de origem.\n✓ Quatro botões depois do desenho; grade 2 × 2 no celular.\nAgora envie somente o index.html ao GitHub.');}
+async function get(){const btn=document.getElementById('get');btn.disabled=true;setStatus('Consultando repositório E-3907-concept...');
+try{
+ let body;
+ try{const res=await fetch('https://raw.githubusercontent.com/robexter/E-3907-concept/main/index.html?refine='+Date.now(),{cache:'no-store'});if(!res.ok)throw Error('Raw GitHub '+res.status);body=await res.text();}
+ catch(first){const res=await fetch('https://api.github.com/repos/robexter/E-3907-concept/contents/index.html?at='+Date.now(),{headers:{'Accept':'application/vnd.github+json'}});if(!res.ok)throw Error('GitHub API '+res.status+'; '+first.message);const json=await res.json();const bin=atob(json.content.replace(/\s/g,''));body=new TextDecoder('utf-8').decode(Uint8Array.from(bin,c=>c.charCodeAt(0)));}
+ process(body,'GitHub (main/index.html)');
+}catch(e){setStatus('Não foi possível gerar automaticamente: '+e.message+'\nVocê pode clicar em “Usar index.html do meu computador” e selecionar o index.html original baixado do GitHub.');}finally{btn.disabled=false}}
+document.getElementById('get').addEventListener('click',get);
+document.getElementById('file').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;try{process(await f.text(),'arquivo local '+f.name)}catch(err){setStatus('Não foi possível corrigir: '+err.message)}finally{e.target.value=''}});
+</script></body></html>

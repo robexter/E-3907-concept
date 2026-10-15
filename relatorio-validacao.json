@@ -1,0 +1,92 @@
+DEBUG 320 panel open [] function complete
+DEBUG 360 panel open [] function complete
+DEBUG 390 panel open [] function complete
+DEBUG 430 panel open [] function complete
+DEBUG 768 panel open [] function complete
+DEBUG 1280 panel open [] function complete
+[
+  {
+    "width": 320,
+    "rows": 2,
+    "scrollWidth": 320,
+    "stageBottom": 347,
+    "buttonsTop": 385,
+    "dockIds": [
+      "ci-open",
+      "lc5-open"
+    ],
+    "summaryWorks": true,
+    "lampWorks": true,
+    "pageErrors": []
+  },
+  {
+    "width": 360,
+    "rows": 2,
+    "scrollWidth": 360,
+    "stageBottom": 360,
+    "buttonsTop": 398,
+    "dockIds": [
+      "ci-open",
+      "lc5-open"
+    ],
+    "summaryWorks": true,
+    "lampWorks": true,
+    "pageErrors": []
+  },
+  {
+    "width": 390,
+    "rows": 2,
+    "scrollWidth": 390,
+    "stageBottom": 380,
+    "buttonsTop": 420,
+    "dockIds": [
+      "ci-open",
+      "lc5-open"
+    ],
+    "summaryWorks": true,
+    "lampWorks": true,
+    "pageErrors": []
+  },
+  {
+    "width": 430,
+    "rows": 2,
+    "scrollWidth": 430,
+    "stageBottom": 408,
+    "buttonsTop": 448,
+    "dockIds": [
+      "ci-open",
+      "lc5-open"
+    ],
+    "summaryWorks": true,
+    "lampWorks": true,
+    "pageErrors": []
+  },
+  {
+    "width": 768,
+    "rows": 1,
+    "scrollWidth": 768,
+    "stageBottom": 582,
+    "buttonsTop": 625,
+    "dockIds": [
+      "ci-open",
+      "lc5-open"
+    ],
+    "summaryWorks": true,
+    "lampWorks": true,
+    "pageErrors": []
+  },
+  {
+    "width": 1280,
+    "rows": 1,
+    "scrollWidth": 1280,
+    "stageBottom": 933,
+    "buttonsTop": 982,
+    "dockIds": [
+      "ci-open",
+      "lc5-open"
+    ],
+    "summaryWorks": true,
+    "lampWorks": true,
+    "pageErrors": []
+  }
+]

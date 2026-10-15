@@ -1,0 +1,14 @@
+E-3907 Concept — Responsividade mobile V6
+
+Correção: PVR, Intemperismo, Flooding e Resumo E-3907 foram movidos do rodapé flutuante para uma grade própria após a tela de processo (duas colunas no celular, quatro em telas maiores). Os atalhos Conteúdo Integral e Laboratório Concept também ficam fora do desenho, mantendo suas funcionalidades.
+
+PUBLICAÇÃO RECOMENDADA
+1. Abra ABRIR-CORRETOR.html no Chrome ou Edge com internet.
+2. Clique em Buscar e gerar index.html atualizado. O preparador usa a versão atual do GitHub.
+3. Envie apenas o index.html gerado para a raiz de robexter/E-3907-concept via Add file > Upload files > Commit changes.
+4. Aguarde o GitHub Pages e recarregue a página. Se a versão antiga persistir, feche o PWA e reabra; se necessário, faça atualização sem cache no navegador.
+
+PUBLICAÇÃO ALTERNATIVA
+O index.html deste pacote foi gerado a partir de uma cópia técnica anterior do projeto e contém os mesmos dados de processo e imagem da versão verificada. Para garantir preservação de mudanças mais recentes, prefira sempre o gerador acima.
+
+Não substitua sw.js. Não envie estes arquivos ao portal central U39-Area-Fria-ConcePT.
